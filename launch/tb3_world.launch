@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <include file="$(find turtlebot3_navigation)/launch/amcl.launch" />
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch"/>
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+
+  <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find basic_amr_likelihood)/config/localization.rviz"/>
+
+</launch>
