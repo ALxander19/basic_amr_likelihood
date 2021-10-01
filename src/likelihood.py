@@ -41,7 +41,15 @@ def likelihood(msg_laser,act_pose,x_prime_list,y_prime_list):
   q = 1
   count = 0
   for z_k in msg_laser.ranges:
+    if z_k < z_max:
 
+      # Write here your code
+
+      # Your code ends here
+
+      count = count + 1
+
+    # Put here the increment of angle sensor
 
   print("cuenta: "+str(count))
   return q**(1./count)
