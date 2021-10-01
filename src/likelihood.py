@@ -51,7 +51,7 @@ def likelihood(msg_laser,act_pose,x_prime_list,y_prime_list):
 
     # Put here the increment of angle sensor
 
-  print("cuenta: "+str(count))
+  print("Count: "+str(count))
   return q**(1./count)
 
 
